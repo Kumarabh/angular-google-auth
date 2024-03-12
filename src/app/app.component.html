@@ -1,0 +1,14 @@
+
+
+<ng-container *ngIf="!loggedIn; then tb else eb;"></ng-container>
+
+<ng-template #tb>
+<asl-google-signin-button type='icon' size='medium' >
+  <button GoogleSigninButtonDirective (click)="signInWithGoogle()">Sign in with Google</button>
+</asl-google-signin-button> SignIn with google
+</ng-template>
+
+<ng-template #eb>
+  <button (click)="signOut()">Sign Out</button>
+</ng-template>
+<router-outlet></router-outlet>
